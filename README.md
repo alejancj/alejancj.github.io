@@ -2,8 +2,11 @@
 
 This my portfolio
 
+My email is caballe2 @ purdue . edu
+
 ## Projects
 Here is (link) [https://]
+- add paper and google doc about research
 
 ### First Project
 - first time
