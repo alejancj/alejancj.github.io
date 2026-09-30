@@ -116,7 +116,7 @@ p { margin: 0 0 1.5em; }
 /* About: text on the left, square photo on the right */
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(200px, 32vw, 340px);
+  grid-template-columns: minmax(0, 1fr) clamp(180px, 24vw, 260px);
   gap: clamp(28px, 5vw, 56px);
   align-items: start;
 }
