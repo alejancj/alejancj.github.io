@@ -1,374 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Alejandro | Engineering Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alejandro | Engineering Portfolio</title>
+<meta name="description" content="Engineering portfolio: projects, internships, resume and contact information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<!-- ================= NAVIGATION ================= -->
-
-<nav class="navbar">
-
-    <div class="logo">
-        <div class="logo-circle">A</div>
-
-        <div>
-            <h3>Alejandro</h3>
-            <span>Engineering Portfolio</span>
-        </div>
+<header class="site-header">
+  <div class="brand">
+    <svg id="logo" viewBox="0 0 44 44" fill="none" stroke="#fff" stroke-width=".7" aria-hidden="true"></svg>
+    <span>Engineering Portfolio</span>
+  </div>
+  <div class="nav-bar">
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#internships">Internships</a>
+      <a href="#contact">Contact</a>
+      <a href="#resume">Resume</a>
+    </nav>
+    <div class="social">
+      <!-- Replace YOUR-USERNAME / your-profile with your real profile names -->
+      <a href="https://github.com/YOUR-USERNAME" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a href="https://www.linkedin.com/in/your-profile" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.05c.53-1 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.12v5.88h-4v-5.21c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.3h-4V9.75z"/></svg></a>
     </div>
+  </div>
+</header>
 
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <a href="resume.pdf" target="_blank">Resume</a>
+<main>
+  <!-- HOME -->
+  <section class="hero" id="home" aria-label="Home">
+    <!-- Placeholder artwork. To use a photo instead, delete this <svg> and add to .hero in styles.css:
+         background: url("your-hero-photo.jpg") center / cover; filter: grayscale(1); -->
+    <svg class="art" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="bg" x1="0" x2="1">
+          <stop offset="0" stop-color="#c3c7ca"/><stop offset="1" stop-color="#8d9297"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="640" fill="url(#bg)"/>
+      <g stroke="#fff" stroke-opacity=".35" stroke-width="2">
+        <line x1="470" y1="0" x2="470" y2="640"/><line x1="500" y1="0" x2="500" y2="640"/>
+        <line x1="470" y1="150" x2="1200" y2="150" stroke-opacity=".18"/>
+      </g>
+      <circle cx="235" cy="235" r="78" fill="#6e767d"/>
+      <path d="M60 640 C70 470 150 405 235 405 C320 405 400 470 410 640 Z" fill="#5e666d"/>
+      <g>
+        <rect x="800" y="560" width="260" height="80" rx="14" fill="#6c7379"/>
+        <rect x="878" y="290" width="86" height="280" rx="34" fill="#dfe2e4"/>
+        <g transform="rotate(-16 921 290)">
+          <rect x="560" y="252" width="380" height="76" rx="38" fill="#eceeef"/>
+        </g>
+        <circle cx="921" cy="290" r="56" fill="#3b4148" stroke="#e8eaeb" stroke-width="4"/>
+        <circle cx="571" cy="190" r="44" fill="#2f353b" stroke="#e8eaeb" stroke-width="4"/>
+        <rect x="420" y="160" width="160" height="60" rx="22" fill="#d6d9db" transform="rotate(-6 500 190)"/>
+        <g stroke="#2f353b" stroke-width="5" stroke-linecap="round">
+          <line x1="415" y1="172" x2="385" y2="245"/><line x1="440" y1="180" x2="418" y2="255"/>
+        </g>
+        <path d="M878 330 C820 380 790 450 800 560" stroke="#2f353b" stroke-width="6" fill="none"/>
+      </g>
+    </svg>
+    <div class="hero-title">
+      <h1>Alejandro</h1>
+      <p>Engineering Portfolio</p>
     </div>
+  </section>
 
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<section id="home" class="hero">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-text">
-
-        <p>ENGINEERING PORTFOLIO</p>
-
-        <h1>
-            ALEJANDRO
-        </h1>
-
-        <h2>
-            Mechanical Engineering
-        </h2>
-
+  <!-- ABOUT -->
+  <section class="block" id="about">
+    <div class="col">
+      <div class="avatar">
+        <img src="Alejandro_0038114906.jpg" alt="Portrait of Alejandro">
+      </div>
+      <h2>About me</h2>
+      <p>My curiosity about how the world works drives me to keep learning, and it is what led me to study engineering. I enjoy designing practical solutions and pushing myself to grow as an engineer.</p>
+      <p>I am drawn to complex, high-stakes technical problems, and I want to join teams that solve them. I want my work to help expand what we know and what we can build.</p>
+      <p>Throughout my studies I have taken on projects and team roles that pushed me outside my comfort zone. Internships gave me hands-on industry experience and let me apply what I learned in class. Along the way I have built skills in design, written and verbal communication, and working across disciplines.</p>
+      <p>If you have an opportunity that might be a good fit, or any questions, please reach out through the contact form below.</p>
+      <a class="pill" href="#contact">Contact</a>
     </div>
+  </section>
 
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about" class="about">
-
-    <img
-        src="Alejandro_0038114906.jpg"
-        alt="Alejandro"
-        class="profile-photo"
-    >
-
-    <div class="about-content">
-
-        <p class="section-label">
-            GET TO KNOW ME
-        </p>
-
-        <h2>ABOUT ME</h2>
-
-        <p>
-            I am a Mechanical Engineering student at Purdue University
-            with a strong interest in engineering design, manufacturing,
-            research, and improving the systems around me.
-        </p>
-
-        <p>
-            My engineering experience has allowed me to work with
-            research, CAD design, manufacturing processes, and collaborative
-            engineering projects. I enjoy understanding how things work,
-            identifying opportunities for improvement, and turning ideas
-            into practical solutions.
-        </p>
-
-        <p>
-            Through undergraduate research and engineering organizations,
-            I have developed experience working in technical environments
-            while strengthening my communication, problem-solving, and
-            teamwork skills.
-        </p>
-
-        <a href="#contact" class="button">
-            Contact Me
-        </a>
-
+  <!-- PROJECTS -->
+  <section class="block tight" id="projects">
+    <div class="col wide">
+      <h2>Projects</h2>
+      <div class="projects">
+        <!-- To use a real project photo, replace the <svg> in .thumb with: <img src="project1.jpg" alt="Project 1"> -->
+        <article class="project">
+          <div class="thumb" role="img" aria-label="Project image placeholder">
+            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><circle cx="200" cy="125" r="52" fill="none" stroke="#8b9095" stroke-width="3"/><circle cx="200" cy="125" r="18" fill="#8b9095"/><g stroke="#8b9095" stroke-width="3"><line x1="200" y1="55" x2="200" y2="73"/><line x1="200" y1="177" x2="200" y2="195"/><line x1="130" y1="125" x2="148" y2="125"/><line x1="252" y1="125" x2="270" y2="125"/></g></svg>
+          </div>
+          <h3>Project title one</h3>
+          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
+          <div class="tags">Tools, skills, software</div>
+        </article>
+        <article class="project">
+          <div class="thumb" role="img" aria-label="Project image placeholder">
+            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><path d="M60 190 L200 60 L340 190 Z" fill="none" stroke="#8b9095" stroke-width="3"/><line x1="200" y1="60" x2="200" y2="190" stroke="#8b9095" stroke-width="3"/><line x1="60" y1="190" x2="340" y2="190" stroke="#8b9095" stroke-width="3"/></svg>
+          </div>
+          <h3>Project title two</h3>
+          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
+          <div class="tags">Tools, skills, software</div>
+        </article>
+        <article class="project">
+          <div class="thumb" role="img" aria-label="Project image placeholder">
+            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><path d="M200 40 C230 90 235 140 220 190 L180 190 C165 140 170 90 200 40 Z" fill="none" stroke="#8b9095" stroke-width="3"/><path d="M180 190 L155 220 L180 210 Z M220 190 L245 220 L220 210 Z" fill="#8b9095"/></svg>
+          </div>
+          <h3>Project title three</h3>
+          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
+          <div class="tags">Tools, skills, software</div>
+        </article>
+        <article class="project">
+          <div class="thumb" role="img" aria-label="Project image placeholder">
+            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><g fill="none" stroke="#8b9095" stroke-width="3"><circle cx="150" cy="125" r="50"/><circle cx="235" cy="125" r="34"/><circle cx="150" cy="125" r="14"/><circle cx="235" cy="125" r="10"/></g></svg>
+          </div>
+          <h3>Project title four</h3>
+          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
+          <div class="tags">Tools, skills, software</div>
+        </article>
+      </div>
     </div>
+  </section>
 
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section id="projects" class="projects">
-
-    <div class="section-heading">
-
-        <p>ENGINEERING WORK</p>
-
-        <h2>PROJECTS</h2>
-
-        <div class="line"></div>
-
+  <!-- INTERNSHIPS -->
+  <section class="block tight" id="internships">
+    <div class="col wide">
+      <h2>Internships</h2>
+      <div class="jobs">
+        <article class="job">
+          <div class="when">Start – End dates</div>
+          <div>
+            <h3>Job title</h3>
+            <p class="org">Company name, City, State</p>
+            <ul>
+              <li>Describe a task you owned and the result it produced.</li>
+              <li>Describe a tool, process, or test you used or improved.</li>
+              <li>Describe how you worked with other teams.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="when">Start – End dates</div>
+          <div>
+            <h3>Job title</h3>
+            <p class="org">Company name, City, State</p>
+            <ul>
+              <li>Describe a problem you helped solve.</li>
+              <li>Include a number if you have one, such as time saved or cost reduced.</li>
+              <li>Describe what you learned about the industry.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </div>
+  </section>
 
-
-    <div class="project-grid">
-
-
-        <!-- DRONE -->
-
-        <div class="project-card">
-
-            <div class="project-image drone-image">
-                <span>PROJECT IMAGE</span>
-            </div>
-
-            <div class="project-info">
-
-                <p class="project-type">
-                    DESIGN • AERODYNAMICS • CAD
-                </p>
-
-                <h3>
-                    High-Speed Racing Drone
-                </h3>
-
-                <p>
-                    Working with Purdue ASME on the development of a
-                    high-speed racing drone with the goal of challenging
-                    the 408 mph world speed record.
-                </p>
-
-                <a href="#">
-                    View Project →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- MXENE -->
-
-        <div class="project-card">
-
-            <div class="project-image research-image">
-                <span>PROJECT IMAGE</span>
-            </div>
-
-            <div class="project-info">
-
-                <p class="project-type">
-                    RESEARCH • MATERIALS • MANUFACTURING
-                </p>
-
-                <h3>
-                    MXene Undergraduate Research
-                </h3>
-
-                <p>
-                    Conducted research involving MXenes and two-dimensional
-                    materials, including processing and testing multiple
-                    material variations.
-                </p>
-
-                <a href="#">
-                    View Research →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROJECT 3 -->
-
-        <div class="project-card">
-
-            <div class="project-image cad-image">
-                <span>PROJECT IMAGE</span>
-            </div>
-
-            <div class="project-info">
-
-                <p class="project-type">
-                    DESIGN • CAD • ENGINEERING
-                </p>
-
-                <h3>
-                    Mechanical Design Projects
-                </h3>
-
-                <p>
-                    A collection of engineering design and analysis projects
-                    involving CAD, mechanical systems, simulation, and
-                    problem solving.
-                </p>
-
-                <a href="#">
-                    View Projects →
-                </a>
-
-            </div>
-
-        </div>
-
-
+  <!-- CONTACT -->
+  <section class="block tight" id="contact">
+    <div class="col">
+      <h2>Contact</h2>
+      <form id="contact-form" novalidate>
+        <label>Name<input type="text" id="c-name" autocomplete="name" required></label>
+        <label>Email<input type="email" id="c-email" autocomplete="email" required></label>
+        <label>Message<textarea id="c-msg" required></textarea></label>
+        <div><button class="pill" type="submit">Send message</button></div>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
     </div>
+  </section>
 
-</section>
-
-
-<!-- ================= EXPERIENCE ================= -->
-
-<section id="experience" class="experience">
-
-    <div class="section-heading">
-
-        <p>BACKGROUND</p>
-
-        <h2>EXPERIENCE & LEADERSHIP</h2>
-
-        <div class="line"></div>
-
+  <!-- RESUME -->
+  <section class="block" id="resume">
+    <div class="col">
+      <h2>Resume</h2>
+      <p>A one-page summary of my education, experience, and technical skills.</p>
+      <!-- Upload your resume to the repo as resume.pdf, or change the filename below -->
+      <a class="pill" href="resume.pdf" download>Download resume (PDF)</a>
     </div>
-
-
-    <div class="experience-container">
-
-        <div class="experience-item">
-
-            <span>RESEARCH</span>
-
-            <h3>Undergraduate Research</h3>
-
-            <h4>Purdue University</h4>
-
-            <p>
-                Conducted research involving MXenes and advanced
-                two-dimensional materials while gaining hands-on experience
-                with laboratory equipment, material processing, and
-                experimental procedures.
-            </p>
-
-        </div>
-
-
-        <div class="experience-item">
-
-            <span>ENGINEERING</span>
-
-            <h3>American Society of Mechanical Engineers</h3>
-
-            <h4>High-Speed Drone Team</h4>
-
-            <p>
-                Contributing to the early-stage development of a high-speed
-                racing drone through engineering research, design decisions,
-                CAD development, and team collaboration.
-            </p>
-
-        </div>
-
-
-        <div class="experience-item">
-
-            <span>LEADERSHIP</span>
-
-            <h3>Hispanos Unidos</h3>
-
-            <h4>Vice President & Co-Founder</h4>
-
-            <p>
-                Helped establish and grow a student organization while
-                coordinating events, securing funding, and working with
-                fellow student leaders.
-            </p>
-
-        </div>
-
-
-        <div class="experience-item">
-
-            <span>LEADERSHIP</span>
-
-            <h3>Boiler Gold Rush</h3>
-
-            <h4>Team Leader</h4>
-
-            <p>
-                Led a group of incoming Purdue students during orientation,
-                helping them transition to campus and build connections
-                within the Purdue community.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-    <p>LET'S CONNECT</p>
-
-    <h2>CONTACT</h2>
-
-    <p class="contact-text">
-        Interested in discussing engineering, research, manufacturing,
-        or potential opportunities? Feel free to reach out.
-    </p>
-
-    <div class="contact-buttons">
-
-        <a href="mailto:YOUR_EMAIL@purdue.edu">
-            Email Me
-        </a>
-
-        <a
-            href="YOUR_LINKEDIN_URL"
-            target="_blank"
-        >
-            LinkedIn
-        </a>
-
-        <a
-            href="resume.pdf"
-            target="_blank"
-        >
-            Resume
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
+  </section>
+</main>
 
 <footer>
-
-    <p>
-        © 2026 Alejandro | Mechanical Engineering Portfolio
-    </p>
-
+  <p>&copy; <span id="yr"></span> Alejandro. Engineering Portfolio.</p>
 </footer>
 
+<script>
+  // Logo: points on a circle joined by fine lines
+  (function () {
+    var svg = document.getElementById('logo'), n = 11, pts = [], ns = 'http://www.w3.org/2000/svg';
+    var c = document.createElementNS(ns, 'circle');
+    c.setAttribute('cx', 22); c.setAttribute('cy', 22); c.setAttribute('r', 20); c.setAttribute('stroke-width', '1');
+    svg.appendChild(c);
+    for (var i = 0; i < n; i++) {
+      var a = (i / n) * Math.PI * 2 + .3, r = i % 3 === 0 ? 20 : 12 + (i * 7 % 6);
+      pts.push([22 + r * Math.cos(a), 22 + r * Math.sin(a)]);
+    }
+    for (i = 0; i < n; i++) for (var j = i + 1; j < n; j++) {
+      var l = document.createElementNS(ns, 'line');
+      l.setAttribute('x1', pts[i][0]); l.setAttribute('y1', pts[i][1]);
+      l.setAttribute('x2', pts[j][0]); l.setAttribute('y2', pts[j][1]);
+      svg.appendChild(l);
+    }
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
 
+  // Highlight the nav link for the section currently on screen
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var sections = Object.keys(map).map(function (id) { return document.getElementById(id); });
+
+    function update() {
+      var y = window.scrollY + 140, current = sections[0].id;
+      sections.forEach(function (s) { if (s.offsetTop <= y) current = s.id; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        current = sections[sections.length - 1].id;
+      }
+      links.forEach(function (a) { a.classList.toggle('active', a === map[current]); });
+      var act = map[current];
+      if (act) {
+        var bar = act.parentElement;
+        if (bar.scrollWidth > bar.clientWidth) bar.scrollLeft = act.offsetLeft - 20;
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  // Contact form: opens the visitor's email app with the message filled in
+  (function () {
+    var TO = 'you@example.com'; // <- change to your email address
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('c-name').value.trim(),
+          email = document.getElementById('c-email').value.trim(),
+          msg = document.getElementById('c-msg').value.trim(),
+          note = document.getElementById('form-note');
+      if (!name || !email || !msg) { note.textContent = 'Please fill in your name, email, and message.'; return; }
+      var body = msg + '\n\n' + name + '\n' + email;
+      window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent('Portfolio message from ' + name) + '&body=' + encodeURIComponent(body);
+      note.textContent = 'Opening your email app to send the message.';
+    });
+  })();
+</script>
 </body>
-
 </html>
