@@ -1,0 +1,583 @@
+/* ==============================
+   GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #f5f5f2;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.navbar {
+    height: 90px;
+    background: #3e4a50;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: white;
+}
+
+.logo-circle {
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid #aaa;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+}
+
+.logo h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.logo span {
+    font-size: 10px;
+    color: #bbb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ddd;
+
+    font-size: 12px;
+    letter-spacing: .7px;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #c6b55c;
+}
+
+
+/* ==============================
+   HERO
+================================ */
+
+.hero {
+    height: 650px;
+
+    /*
+       ADD YOUR ENGINEERING HERO IMAGE HERE
+    */
+
+    background-image:
+        linear-gradient(
+            rgba(20,25,28,.35),
+            rgba(20,25,28,.55)
+        ),
+        url("hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 12%;
+}
+
+.hero-text {
+    color: white;
+    text-align: right;
+}
+
+.hero-text p {
+    color: #d1c15d;
+
+    font-size: 13px;
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+.hero-text h1 {
+    font-size: 70px;
+    font-weight: 300;
+
+    letter-spacing: 4px;
+
+    line-height: 1;
+}
+
+.hero-text h2 {
+    font-size: 26px;
+    font-weight: 300;
+
+    letter-spacing: 3px;
+
+    margin-top: 15px;
+}
+
+
+/* ==============================
+   ABOUT
+================================ */
+
+.about {
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 90px;
+
+    padding: 100px 12%;
+
+    background: #f5f5f2;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.about-content {
+    max-width: 620px;
+}
+
+.section-label {
+    color: #aaa;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.about h2 {
+    font-size: 38px;
+
+    font-weight: 300;
+
+    letter-spacing: 2px;
+
+    margin: 5px 0 25px;
+}
+
+.about-content p {
+    margin-bottom: 18px;
+
+    font-size: 15px;
+
+    color: #666;
+}
+
+.button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 24px;
+
+    border: 1px solid #c2a957;
+    border-radius: 25px;
+
+    color: #8d7a38;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.button:hover {
+    background: #c2a957;
+    color: white;
+}
+
+
+/* ==============================
+   SECTION HEADINGS
+================================ */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+.section-heading p {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #c2a957;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+
+    font-weight: 300;
+
+    letter-spacing: 3px;
+}
+
+.line {
+    width: 50px;
+    height: 1px;
+
+    background: #c2a957;
+
+    margin: 18px auto;
+}
+
+
+/* ==============================
+   PROJECTS
+================================ */
+
+.projects {
+    padding: 100px 8%;
+
+    background: #3e4a50;
+
+    color: white;
+}
+
+.project-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.project-card {
+    background: #f5f5f2;
+
+    color: #333;
+
+    transition: transform .3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-image {
+    height: 250px;
+
+    background: #707a7f;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(255,255,255,.6);
+
+    letter-spacing: 2px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+/*
+
+Later, when you upload project images:
+
+.drone-image {
+    background-image: url("drone.jpg");
+}
+
+.research-image {
+    background-image: url("mxene.jpg");
+}
+
+.cad-image {
+    background-image: url("cad.jpg");
+}
+
+*/
+
+.project-info {
+    padding: 30px;
+}
+
+.project-type {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #b49e4e;
+
+    margin-bottom: 8px;
+}
+
+.project-info h3 {
+    font-size: 23px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.project-info p {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.project-info a {
+    text-decoration: none;
+
+    color: #9c873d;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   EXPERIENCE
+================================ */
+
+.experience {
+    padding: 100px 12%;
+
+    background: white;
+}
+
+.experience-container {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.experience-item {
+    padding: 35px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.experience-item span {
+    color: #b49e4e;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.experience-item h3 {
+    font-size: 24px;
+
+    font-weight: 400;
+
+    margin-top: 5px;
+}
+
+.experience-item h4 {
+    color: #888;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.experience-item p {
+    color: #666;
+}
+
+
+/* ==============================
+   CONTACT
+================================ */
+
+.contact {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background: #3e4a50;
+
+    color: white;
+}
+
+.contact > p:first-child {
+    color: #c2a957;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+}
+
+.contact h2 {
+    font-size: 42px;
+
+    font-weight: 300;
+
+    letter-spacing: 4px;
+
+    margin: 10px 0 20px;
+}
+
+.contact-text {
+    max-width: 550px;
+
+    margin: auto;
+
+    color: #ccc;
+}
+
+.contact-buttons {
+    margin-top: 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.contact-buttons a {
+    color: white;
+
+    border: 1px solid #c2a957;
+
+    border-radius: 25px;
+
+    padding: 10px 25px;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.contact-buttons a:hover {
+    background: #c2a957;
+}
+
+
+/* ==============================
+   FOOTER
+================================ */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #30393d;
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        height: 500px;
+
+        justify-content: center;
+
+        padding: 20px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 45px;
+    }
+
+    .hero-text h2 {
+        font-size: 18px;
+    }
+
+    .about {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 40px;
+
+        padding: 80px 8%;
+    }
+
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+
+        max-width: 250px;
+
+        margin: 35px auto 0;
+    }
+
+}
