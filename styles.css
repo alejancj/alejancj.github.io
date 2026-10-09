@@ -1,18 +1,45 @@
-/* Alejandro Caballero-Julian – portfolio styles */
+/* =====================================================================
+   Alejandro Caballero-Julian | portfolio styles
 
+   WHAT IS IN THIS FILE (search for the number and title to jump there)
+     1.  Colors and fonts      change the whole palette here
+     2.  Page basics           page background, base text, links
+     3.  Header and menu       green bar, links, Projects dropdown, LinkedIn icon
+     4.  Intro                 big name and title at the top
+     5.  Shared section styles spacing and headings used by every section
+     6.  About                 photo beside the bio
+     7.  Buttons               the outlined round buttons
+     8.  Projects              the spec-sheet cards
+     9.  Experiences           jobs and internships list
+     10. Contact               message form
+     11. Footer
+     12. Screen sizes          laptop, tablet and phone adjustments
+
+   Tip: most color and font changes only need section 1.
+   ===================================================================== */
+
+
+/* ==================================================================
+   1. COLORS AND FONTS
+   Change a value here and it updates everywhere it is used.
+   ================================================================== */
 :root {
-  --pine: #2f473d;
-  --lime: #c8e44a;
-  --page: #eff0ec;
-  --ink: #63686d;
-  --ink-strong: #3d4248;
-  --muted: #71767b;
-  --line: #d5d7d2;
-  --clay: #d8906c;
-  --clay-deep: #b0673f;
-  --card: #e6e8e3;
+  --pine: #2f473d;       /* green: header bar and the bottom half of project cards */
+  --lime: #c8e44a;       /* bright accent: menu hover and active link, numbers on project cards */
+  --page: #eff0ec;       /* off-white page background */
+  --ink: #63686d;        /* normal body text */
+  --ink-strong: #3d4248; /* darker text: titles */
+  --muted: #71767b;      /* light gray text: section headings, small notes */
+  --line: #d5d7d2;       /* thin divider lines */
+  --clay: #d8906c;       /* orange accent: button outline, dots on project cards */
+  --clay-deep: #b0673f;  /* darker orange: button text, small labels */
+  --card: #e6e8e3;       /* background behind images */
   --sans: "Jost", "Century Gothic", "Avenir Next", "Avenir", "Futura", "Segoe UI", sans-serif;
 }
+
+/* ==================================================================
+   2. PAGE BASICS
+   ================================================================== */
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -38,7 +65,11 @@ a { color: inherit; }
 img { max-width: 100%; }
 :focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
 
-/* ---------- Header / navigation ---------- */
+/* ==================================================================
+   3. HEADER AND MENU
+   ================================================================== */
+
+/* Green bar that stays at the top while scrolling */
 .site-header {
   position: sticky;
   top: 0;
@@ -47,17 +78,20 @@ img { max-width: 100%; }
   color: #fff;
   padding: 16px clamp(16px, 4vw, 44px) 0;
 }
+/* Your name, top left */
 .brand { padding-bottom: 14px; }
 .brand a {
   color: #fff; text-decoration: none;
   font-size: clamp(15px, 2.2vw, 18px); font-weight: 300; letter-spacing: .12em;
 }
 
+/* Row holding the menu links and the social icons */
 .nav-bar {
   border-top: 1px solid rgba(255, 255, 255, .4);
   display: flex; align-items: center; justify-content: space-between;
   gap: 16px;
 }
+/* Menu links: size, color, and the highlight color when hovered or active */
 .nav-links { display: flex; gap: 22px; padding: 10px 0; }
 .nav-links a {
   font-size: 12px; letter-spacing: .03em; text-decoration: none; color: #fff;
@@ -66,12 +100,41 @@ img { max-width: 100%; }
 .nav-links a:hover,
 .nav-links a.active { color: var(--lime); }
 
+/* Projects dropdown: the arrow button and the list that opens under "Projects" */
+.has-menu { position: relative; display: flex; align-items: center; gap: 2px; }
+.menu-btn {
+  display: grid; place-items: center; width: 22px; height: 22px; padding: 0;
+  background: transparent; border: 0; color: #fff; cursor: pointer; border-radius: 4px;
+}
+.menu-btn:hover { color: var(--lime); }
+.menu-btn svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.has-menu.open .menu-btn svg { transform: rotate(180deg); }
+
+.submenu {
+  display: none;
+  position: absolute; top: calc(100% + 10px); left: -16px; z-index: 30;
+  min-width: 230px; max-width: min(300px, 86vw);
+  margin: 0; padding: 8px 0; list-style: none;
+  background: #263b32; border: 1px solid rgba(255, 255, 255, .18); border-top: 0;
+  border-radius: 0 0 6px 6px; box-shadow: 0 14px 30px rgba(0, 0, 0, .22);
+}
+.submenu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.has-menu:hover .submenu,
+.has-menu:focus-within .submenu,
+.has-menu.open .submenu { display: block; }
+.submenu a { display: block; padding: 9px 18px; font-size: 12px; white-space: normal; line-height: 1.5; }
+.submenu a:hover { background: rgba(255, 255, 255, .08); }
+
+/* Social icons (LinkedIn), top right */
 .social { display: flex; gap: 12px; }
 .social a { display: grid; place-items: center; width: 24px; height: 24px; color: #fff; }
 .social a:hover { color: var(--lime); }
 .social svg { width: 15px; height: 15px; fill: currentColor; }
 
-/* ---------- Intro (name + title) ---------- */
+/* ==================================================================
+   4. INTRO  (big name and title above About)
+   ================================================================== */
+
 .intro {
   text-align: center;
   padding: clamp(64px, 11vw, 120px) 24px 0;
@@ -100,7 +163,11 @@ img { max-width: 100%; }
   margin: 40px auto 0;
 }
 
-/* ---------- Sections ---------- */
+/* ==================================================================
+   5. SHARED SECTION STYLES
+   Spacing, width and heading style used by every section.
+   ================================================================== */
+
 section.block { padding: clamp(56px, 9vw, 110px) clamp(20px, 5vw, 40px); }
 section.block + section.block { border-top: 1px solid var(--line); }
 .intro + .block { padding-top: clamp(40px, 6vw, 72px); }
@@ -113,10 +180,15 @@ h2 {
 }
 p { margin: 0 0 1.5em; }
 
-/* About: text on the left, square photo on the right */
+/* ==================================================================
+   6. ABOUT
+   Text on the left, square photo on the right.
+   To change the photo size, edit the second value in grid-template-columns.
+   ================================================================== */
+
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(180px, 24vw, 260px);
+  grid-template-columns: minmax(0, 1fr) clamp(200px, 32vw, 340px);
   gap: clamp(28px, 5vw, 56px);
   align-items: start;
 }
@@ -128,6 +200,10 @@ p { margin: 0 0 1.5em; }
   border-radius: 4px; background: var(--card);
 }
 
+/* ==================================================================
+   7. BUTTONS
+   The outlined round buttons (Contact, Send message, Download resume).
+   ================================================================== */
 .pill {
   display: inline-block; padding: 5px 20px; border: 1px solid var(--clay);
   border-radius: 999px; font-size: 12px; color: var(--clay-deep); text-decoration: none;
@@ -136,23 +212,123 @@ p { margin: 0 0 1.5em; }
 }
 .pill:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; }
 
-/* Projects */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-  gap: 44px 36px;
-}
-.project .thumb {
-  aspect-ratio: 16 / 10; background: var(--card); border-radius: 4px; overflow: hidden;
-  margin-bottom: 18px; display: block;
-}
-.project .thumb svg,
-.project .thumb img { width: 100%; height: 100%; display: block; object-fit: cover; }
-.project h3 { margin: 0 0 6px; font-weight: 300; font-size: 19px; letter-spacing: .02em; color: var(--ink-strong); }
-.project p { margin: 0 0 10px; font-size: 14px; line-height: 1.75; }
-.tags { font-size: 12px; color: var(--muted); }
+/* ==================================================================
+   8. PROJECTS  (spec-sheet cards)
+   Each card has a light top half and a green bottom half.
+   ================================================================== */
 
-/* Internships */
+#projects .col.wide { max-width: 1080px; }
+.projects { display: grid; gap: clamp(40px, 6vw, 64px); }
+
+/* The card itself: fonts, colors and rounded corners */
+.project {
+  --mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --on-pine: #e6eee8;
+  --on-pine-dim: #b4c6ba;
+  --pine-line: rgba(255, 255, 255, .3);
+  background: #f8f8f5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 44px rgba(47, 71, 61, .13);
+  font-family: var(--mono);
+  font-weight: 400;
+  color: var(--ink-strong);
+}
+
+/* ---- Top half (light) ---- */
+.p-top { padding: clamp(22px, 3.4vw, 40px) clamp(20px, 3.4vw, 40px) clamp(28px, 4vw, 48px); }
+/* Small label row ("Project 01" and "01 / 04") */
+.p-meta {
+  display: flex; justify-content: space-between; gap: 16px;
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1.4;
+  color: var(--clay-deep);
+}
+.p-meta .count { color: var(--ink-strong); }
+/* Breadcrumb line under the label row */
+.p-crumbs {
+  margin: 18px 0 0; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  line-height: 1.5; color: var(--ink-strong);
+}
+.p-crumbs i { font-style: normal; opacity: .45; padding: 0 7px; }
+.p-crumbs b { font-weight: 400; color: var(--clay-deep); }
+
+/* Big project title */
+.project h3 {
+  margin: 30px 0 18px;
+  font-family: var(--display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.5rem, 3.6vw, 2.5rem); line-height: 1.05; letter-spacing: -.01em;
+  color: #1d2124;
+}
+/* Description paragraph */
+.p-desc { max-width: 560px; margin: 0 0 34px; font-size: 12px; line-height: 1.75; color: var(--ink); }
+
+/* Three points with orange dots */
+.p-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px; }
+.pt { display: grid; grid-template-columns: 14px 1fr; column-gap: 12px; align-content: start; }
+.pt .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--clay); margin-top: 3px; }
+.pt h4 { margin: 0 0 10px; font-size: 12.5px; font-weight: 500; line-height: 1.45; color: #1d2124; }
+.pt p { grid-column: 2; margin: 0; font-size: 11px; line-height: 1.75; color: var(--ink); }
+
+/* ---- Bottom half (green) ---- */
+.p-bottom { background: var(--pine); color: var(--on-pine); padding: clamp(14px, 2.4vw, 24px); }
+.p-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--pine-line); }
+
+/* Picture area on the left (works for the drawing or a real photo) */
+.p-figure {
+  display: grid; place-items: center; min-height: 300px; padding: 28px;
+  border-right: 1px solid var(--pine-line);
+}
+.p-figure svg { width: 100%; max-width: 340px; height: auto; max-height: 260px;
+  fill: none; stroke: rgba(255, 255, 255, .62); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.p-figure img { width: 100%; height: 100%; max-height: 300px; object-fit: contain; display: block; }
+
+/* PHOTO LAYOUTS (used when you switch on Option A or B in the HTML)
+   One photo:   <div class="p-figure"> with a single <img>  (uses the rule above)
+   Four photos: <div class="p-figure p-figure--four"> with four <img>  (2 by 2 grid below)
+   To change the shape of the four tiles, edit aspect-ratio. To change the gap, edit gap. */
+.p-figure--four {
+  grid-template-columns: 1fr 1fr;
+  place-items: stretch;
+  align-content: center;
+  gap: 10px;
+  padding: 14px;
+}
+.p-figure--four img {
+  width: 100%; height: auto; max-height: none;
+  aspect-ratio: 4 / 3; object-fit: cover;
+  border: 1px solid var(--pine-line);
+}
+
+/* Details column on the right: numbered rows, tagline, statement, footer row */
+.p-spec { display: flex; flex-direction: column; min-width: 0; }
+.p-row { display: grid; grid-template-columns: 56px 1fr; font-size: 12px; line-height: 1.5; }
+.p-row + .p-row { border-top: 1px solid var(--pine-line); }
+.p-row span { padding: 12px 14px; }
+.p-row span:first-child { border-right: 1px solid var(--pine-line); color: var(--lime); }
+.p-row span:last-child { font-style: italic; color: var(--on-pine); }
+
+/* Empty space that pushes the tagline and statement to the bottom */
+.p-gap { flex: 1 1 auto; border-top: 1px solid var(--pine-line); margin-bottom: -1px; }
+.p-tagline {
+  padding: 10px 14px; font-size: 11px; font-style: italic; line-height: 1.5;
+  color: var(--on-pine-dim); border-top: 1px solid var(--pine-line);
+}
+/* Bold uppercase statement */
+.p-statement {
+  margin: 0; padding: 16px 18px 18px; border-top: 1px solid var(--pine-line);
+  font-family: var(--display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(1rem, 1.9vw, 1.35rem); line-height: 1.3; color: #f4f7f3;
+}
+/* Footer row (course, team or company, and year) */
+.p-foot { display: grid; grid-template-columns: 1fr auto; border-top: 1px solid var(--pine-line); font-size: 11px; line-height: 1.5; }
+.p-foot span { padding: 10px 14px; }
+.p-foot span:last-child { border-left: 1px solid var(--pine-line); min-width: 64px; text-align: center; font-style: italic; }
+
+/* ==================================================================
+   9. EXPERIENCES  (jobs and internships)
+   ================================================================== */
+
 .jobs { border-top: 1px solid var(--line); }
 .job {
   display: grid; grid-template-columns: minmax(120px, 200px) 1fr; gap: 12px 40px;
@@ -164,7 +340,10 @@ p { margin: 0 0 1.5em; }
 .job ul { margin: 0; padding-left: 18px; }
 .job li { margin-bottom: 6px; font-size: 14px; line-height: 1.7; }
 
-/* Contact */
+/* ==================================================================
+   10. CONTACT  (message form)
+   ================================================================== */
+
 form { display: grid; gap: 22px; }
 label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); letter-spacing: .03em; }
 input, textarea {
@@ -175,7 +354,10 @@ textarea { min-height: 120px; resize: vertical; }
 input:focus, textarea:focus { outline: none; border-bottom-color: var(--clay-deep); }
 .form-note { font-size: 13px; color: var(--muted); margin: 0; min-height: 1.5em; }
 
-/* ---------- Footer ---------- */
+/* ==================================================================
+   11. FOOTER
+   ================================================================== */
+
 footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -183,9 +365,13 @@ footer {
 }
 footer p { margin: 0; }
 
-/* ================= Responsive ================= */
+/* ==================================================================
+   12. SCREEN SIZES
+   Adjustments for big monitors, tablets and phones. Listed largest to smallest.
+   ================================================================== */
 
-/* Large screens */
+
+/* Big monitors (1400px and wider) */
 @media (min-width: 1400px) {
   body { font-size: 16px; }
   .col { max-width: 700px; }
@@ -194,17 +380,19 @@ footer p { margin: 0; }
   .about-text { max-width: 640px; }
 }
 
-/* Tablets and small laptop windows */
+/* Tablets and small laptop windows (800px and narrower) */
 @media (max-width: 800px) {
   body { font-size: 16px; }
 }
 
-/* Phones: same navigation, links wrap onto a second line; About stacks */
+/* Phones (620px and narrower): menu links wrap onto a second line, About stacks */
 @media (max-width: 620px) {
   html { scroll-padding-top: 124px; }
 
   .nav-links { flex-wrap: wrap; gap: 0 18px; padding: 4px 0; }
-  .nav-links a { padding: 8px 0; }
+  .nav-links > a, .has-menu > a { padding: 8px 0; }
+  .submenu { left: 0; }
+  .submenu a { padding: 11px 18px; font-size: 13px; }
   .social a { width: 32px; height: 32px; }
   .social svg { width: 17px; height: 17px; }
 
@@ -217,6 +405,13 @@ footer p { margin: 0; }
   .pill { padding: 8px 24px; }
 }
 
+/* Very small phones (400px and narrower) */
 @media (max-width: 400px) {
   .brand a { letter-spacing: .08em; }
+}
+
+/* Project cards (760px and narrower): picture stacks above the details */
+@media (max-width: 760px) {
+  .p-grid { grid-template-columns: 1fr; }
+  .p-figure { border-right: 0; border-bottom: 1px solid var(--pine-line); min-height: 240px; }
 }

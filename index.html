@@ -4,25 +4,66 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alejandro Caballero-Julian | Engineering Portfolio</title>
-<meta name="description" content="Engineering portfolio: projects, experience, resume and contact information.">
+<meta name="description" content="Engineering portfolio: projects, experiences, resume and contact information.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!--
+  =====================================================================
+  HOW THIS FILE IS ORGANIZED
+  =====================================================================
+  Page order, top to bottom. Search for the banner names to jump around.
+
+    1. HEADER     name, menu links, LinkedIn icon
+    2. HOME       big name and title
+    3. ABOUT      photo and your bio
+    4. PROJECTS   one card per project (copy-and-paste blocks)
+    5. EXPERIENCES one entry per job or internship (copy-and-paste blocks)
+    6. CONTACT    message form
+    7. RESUME     download button
+    8. FOOTER     copyright line
+    9. SCRIPT     small bits of behavior, plus a SETTINGS block with your email
+
+  Colors, fonts and sizes live in styles.css, not here.
+
+  Quick edits:
+    - Change your bio:          ABOUT section
+    - Add a project:            copy a whole PROJECT block in PROJECTS
+    - Add a job or internship:  copy a whole ENTRY block in EXPERIENCES
+    - Add project photos:       PICTURE AREA inside each project (1 photo or 4 photos)
+    - Change where messages go: SETTINGS at the top of the SCRIPT section
+  =====================================================================
+-->
+
+<!-- ==============================================================
+     1. HEADER  (sticks to the top of the screen)
+     ============================================================== -->
 <header class="site-header">
   <div class="brand"><a href="#home">Alejandro Caballero-Julian</a></div>
   <div class="nav-bar">
     <nav class="nav-links" aria-label="Primary">
+      <!-- MENU LINKS. To add one: copy a line, change the text, and point href at a
+           section id (a section with id="awards" is linked as href="#awards"). -->
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
+      <!-- Projects link + dropdown. The dropdown list fills itself in from the
+           project titles on the page, so there is nothing to edit here. -->
+      <div class="has-menu">
+        <a href="#projects">Projects</a>
+        <button class="menu-btn" type="button" aria-label="Show project list" aria-haspopup="true" aria-expanded="false" aria-controls="project-menu">
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
+        </button>
+        <ul class="submenu" id="project-menu"></ul>
+      </div>
+      <a href="#experiences">Experiences</a>
       <a href="#contact">Contact</a>
       <a href="#resume">Resume</a>
     </nav>
+    <!-- SOCIAL ICONS. Change href to update the link. To add another icon, copy the <a> line. -->
     <div class="social">
       <a href="https://www.linkedin.com/in/alejandro-caballero-julian/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.05c.53-1 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.12v5.88h-4v-5.21c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.3h-4V9.75z"/></svg></a>
     </div>
@@ -30,13 +71,19 @@
 </header>
 
 <main>
-  <!-- HOME -->
+  <!-- ==============================================================
+       2. HOME  (name and title)
+       ============================================================== -->
   <section class="intro" id="home" aria-label="Home">
     <h1>Alejandro <span class="nb">Caballero-Julian</span></h1>
     <p>Engineering Portfolio</p>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ==============================================================
+       3. ABOUT  (photo on the right, bio text on the left)
+       Photo file: Alejandro_0038114906.jpg (must sit next to this file in the repo).
+       Each <p> is one paragraph of your bio.
+       ============================================================== -->
   <section class="block" id="about">
     <div class="col wide about-grid">
       <figure class="portrait">
@@ -46,65 +93,406 @@
       <h2>About me</h2>
       <p>My curiosity about how the world works drives me to keep learning, and it is what led me to study engineering. I enjoy designing practical solutions and pushing myself to grow as an engineer.</p>
       <p>I am drawn to complex, high-stakes technical problems, and I want to join teams that solve them. I want my work to help expand what we know and what we can build.</p>
-      <p>Throughout my studies I have taken on projects and team roles that pushed me outside my comfort zone. Professional gave me hands-on industry experience and let me apply what I learned in class. Along the way I have built skills in design, written and verbal communication, and working across disciplines.</p>
+      <p>Throughout my studies I have taken on projects and team roles that pushed me outside my comfort zone. My experiences gave me hands-on industry exposure and let me apply what I learned in class. Along the way I have built skills in design, written and verbal communication, and working across disciplines.</p>
       <p>If you have an opportunity that might be a good fit, or any questions, please reach out through the contact form below.</p>
       <a class="pill" href="#contact">Contact</a>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ==============================================================
+       4. PROJECTS
+       Each project is one <article class="project"> block. See the instructions inside
+       the first block for how to add, remove or reorder them.
+       ============================================================== -->
   <section class="block" id="projects">
     <div class="col wide">
       <h2>Projects</h2>
       <div class="projects">
-        <!-- To use a real project photo, replace the <svg> in .thumb with: <img src="project1.jpg" alt="Project 1"> -->
-        <article class="project">
-          <div class="thumb" role="img" aria-label="Project image placeholder">
-            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><circle cx="200" cy="125" r="52" fill="none" stroke="#8b9095" stroke-width="3"/><circle cx="200" cy="125" r="18" fill="#8b9095"/><g stroke="#8b9095" stroke-width="3"><line x1="200" y1="55" x2="200" y2="73"/><line x1="200" y1="177" x2="200" y2="195"/><line x1="130" y1="125" x2="148" y2="125"/><line x1="252" y1="125" x2="270" y2="125"/></g></svg>
+        <!-- ############################################################
+             PROJECT 1  (START)
+             TO ADD A PROJECT
+               1. Copy everything from "PROJECT 1 (START)" to "PROJECT 1 (END)".
+               2. Paste it right after the last project's END line.
+               3. In the pasted copy, change id="project-1" to the next number
+                  (project-5, project-6, ...). Every id must be different.
+               4. Edit the text. Change the "Project 05" label and the "05 / 05" counter,
+                  and update the counters on the other cards if the total changed.
+               5. Photos: see the PICTURE AREA instructions inside the block.
+             The Projects dropdown in the menu adds the new project by itself.
+             TO REMOVE one: delete its whole block. TO REORDER: move a whole block.
+             ############################################################ -->
+        <article class="project" id="project-1">
+          <!-- TOP HALF (light): label, title, description, three points -->
+          <div class="p-top">
+            <!-- Label row: project number on the left, counter on the right -->
+            <div class="p-meta"><span>Project 01</span><span class="count">01 / 04</span></div>
+            <!-- Breadcrumb line. Change "Category" to the project type. -->
+            <p class="p-crumbs">Portfolio<i>&rsaquo;</i>Projects<i>&rsaquo;</i><b>Category</b></p>
+            <!-- Project title (this also becomes the name in the Projects dropdown) -->
+            <h3>Project title one</h3>
+            <!-- Short description -->
+            <p class="p-desc">One or two sentences on what this project is, who it was for, and what problem it set out to solve.</p>
+            <!-- Three points, each a heading plus one sentence. Copy a "pt" line to add more. -->
+            <div class="p-points">
+              <div class="pt"><span class="dot"></span><h4>Objective</h4><p>Describe the goal or problem this project set out to address.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Design approach</h4><p>Describe the methods, tools, and decisions that shaped your solution.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Results</h4><p>Describe what you built, tested, or learned, with numbers if you have them.</p></div>
+            </div>
           </div>
-          <h3>Project title one</h3>
-          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
-          <div class="tags">Tools, skills, software</div>
-        </article>
-        <article class="project">
-          <div class="thumb" role="img" aria-label="Project image placeholder">
-            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><path d="M60 190 L200 60 L340 190 Z" fill="none" stroke="#8b9095" stroke-width="3"/><line x1="200" y1="60" x2="200" y2="190" stroke="#8b9095" stroke-width="3"/><line x1="60" y1="190" x2="340" y2="190" stroke="#8b9095" stroke-width="3"/></svg>
+          <!-- BOTTOM HALF (pine green): picture on the left, details on the right -->
+          <div class="p-bottom">
+            <div class="p-grid">
+              <!-- ############################################################
+                   PROJECT 1: PICTURE AREA  (bottom-left of the card)
+                   Right now this shows a drawing placeholder. To use your own photos:
+                     1. Upload your photo file(s) to the repo, next to index.html.
+                     2. Pick ONE option below: A = one photo, B = four photos.
+                     3. Make it live: delete the two lines that sit just above and just
+                        below its code (they hold only the comment markers).
+                     4. Replace the file names with yours and write a short description
+                        in each alt="" (it is read aloud for visitors who cannot see it).
+                     5. Delete the CURRENT PLACEHOLDER block at the bottom of this area.
+                   Photo tips: JPG or PNG, under about 500 KB each so the page loads fast.
+                   ############################################################ -->
+
+              <!-- OPTION A: ONE PHOTO
+                   IMAGE SLOT 1 (fills the whole picture area): the best single shot of
+                   this project, such as the finished product or a clean CAD render.
+                   Best shape: landscape, about 4:3, at least 1200 pixels wide.
+                   File name to use: project1-photo.jpg -->
+              <!--
+              <div class="p-figure">
+                <img src="project1-photo.jpg" alt="SLOT 1: describe the photo">
+              </div>
+              -->
+
+              <!-- OPTION B: FOUR PHOTOS (2 by 2 grid)
+                   IMAGE SLOT 1 (top left):     overall view of the project
+                   IMAGE SLOT 2 (top right):    a close-up of an important detail
+                   IMAGE SLOT 3 (bottom left):  the build, testing, or work in progress
+                   IMAGE SLOT 4 (bottom right): the result, or you with the project
+                   Best shape: landscape, about 4:3, at least 800 pixels wide each.
+                   File names to use: project1-photo-1.jpg to project1-photo-4.jpg -->
+              <!--
+              <div class="p-figure p-figure--four">
+                <img src="project1-photo-1.jpg" alt="SLOT 1: describe the photo">
+                <img src="project1-photo-2.jpg" alt="SLOT 2: describe the photo">
+                <img src="project1-photo-3.jpg" alt="SLOT 3: describe the photo">
+                <img src="project1-photo-4.jpg" alt="SLOT 4: describe the photo">
+              </div>
+              -->
+
+              <!-- CURRENT PLACEHOLDER: the drawing. Delete this block once you use Option A or B. -->
+              <div class="p-figure">
+                <svg viewBox="0 0 320 240" role="img" aria-label="Project illustration placeholder"><path d="M95 206h130v12H95z"/><path d="M160 206v-52"/><circle cx="160" cy="146" r="10"/><path d="M160 136l-48-42"/><circle cx="106" cy="90" r="8"/><path d="M112 84l78-28"/><circle cx="196" cy="54" r="6"/><path d="M200 52l20-8M200 58l16 12"/></svg>
+              </div>
+              <!-- Details column -->
+              <div class="p-spec">
+                <!-- Numbered rows. Copy a "p-row" line to add more. -->
+                <div class="p-row"><span>01</span><span>Key feature or requirement one</span></div>
+                <div class="p-row"><span>02</span><span>Key feature or requirement two</span></div>
+                <div class="p-row"><span>03</span><span>Key feature or requirement three</span></div>
+                <div class="p-gap"></div>
+                <!-- Tagline -->
+                <div class="p-tagline">Short tagline about the project.</div>
+                <!-- Bold statement -->
+                <p class="p-statement">One bold sentence about the result or impact of this project.</p>
+                <!-- Footer row: course / team / company, then year -->
+                <div class="p-foot"><span>Course, team, or company</span><span>2025</span></div>
+              </div>
+            </div>
           </div>
-          <h3>Project title two</h3>
-          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
-          <div class="tags">Tools, skills, software</div>
         </article>
-        <article class="project">
-          <div class="thumb" role="img" aria-label="Project image placeholder">
-            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><path d="M200 40 C230 90 235 140 220 190 L180 190 C165 140 170 90 200 40 Z" fill="none" stroke="#8b9095" stroke-width="3"/><path d="M180 190 L155 220 L180 210 Z M220 190 L245 220 L220 210 Z" fill="#8b9095"/></svg>
+        <!-- ############################ PROJECT 1  (END) ############################ -->
+        <!-- ############################################################
+             PROJECT 2  (START)
+             ############################################################ -->
+        <article class="project" id="project-2">
+          <!-- TOP HALF (light): label, title, description, three points -->
+          <div class="p-top">
+            <!-- Label row: project number on the left, counter on the right -->
+            <div class="p-meta"><span>Project 02</span><span class="count">02 / 04</span></div>
+            <!-- Breadcrumb line. Change "Category" to the project type. -->
+            <p class="p-crumbs">Portfolio<i>&rsaquo;</i>Projects<i>&rsaquo;</i><b>Category</b></p>
+            <!-- Project title (this also becomes the name in the Projects dropdown) -->
+            <h3>Project title two</h3>
+            <!-- Short description -->
+            <p class="p-desc">One or two sentences on what this project is, who it was for, and what problem it set out to solve.</p>
+            <!-- Three points, each a heading plus one sentence. Copy a "pt" line to add more. -->
+            <div class="p-points">
+              <div class="pt"><span class="dot"></span><h4>Objective</h4><p>Describe the goal or problem this project set out to address.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Design approach</h4><p>Describe the methods, tools, and decisions that shaped your solution.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Results</h4><p>Describe what you built, tested, or learned, with numbers if you have them.</p></div>
+            </div>
           </div>
-          <h3>Project title three</h3>
-          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
-          <div class="tags">Tools, skills, software</div>
-        </article>
-        <article class="project">
-          <div class="thumb" role="img" aria-label="Project image placeholder">
-            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice"><rect width="400" height="250" fill="#d4d8d3"/><g fill="none" stroke="#8b9095" stroke-width="3"><circle cx="150" cy="125" r="50"/><circle cx="235" cy="125" r="34"/><circle cx="150" cy="125" r="14"/><circle cx="235" cy="125" r="10"/></g></svg>
+          <!-- BOTTOM HALF (pine green): picture on the left, details on the right -->
+          <div class="p-bottom">
+            <div class="p-grid">
+              <!-- ############################################################
+                   PROJECT 2: PICTURE AREA  (bottom-left of the card)
+                   Right now this shows a drawing placeholder. To use your own photos:
+                     1. Upload your photo file(s) to the repo, next to index.html.
+                     2. Pick ONE option below: A = one photo, B = four photos.
+                     3. Make it live: delete the two lines that sit just above and just
+                        below its code (they hold only the comment markers).
+                     4. Replace the file names with yours and write a short description
+                        in each alt="" (it is read aloud for visitors who cannot see it).
+                     5. Delete the CURRENT PLACEHOLDER block at the bottom of this area.
+                   Photo tips: JPG or PNG, under about 500 KB each so the page loads fast.
+                   ############################################################ -->
+
+              <!-- OPTION A: ONE PHOTO
+                   IMAGE SLOT 1 (fills the whole picture area): the best single shot of
+                   this project, such as the finished product or a clean CAD render.
+                   Best shape: landscape, about 4:3, at least 1200 pixels wide.
+                   File name to use: project2-photo.jpg -->
+              <!--
+              <div class="p-figure">
+                <img src="project2-photo.jpg" alt="SLOT 1: describe the photo">
+              </div>
+              -->
+
+              <!-- OPTION B: FOUR PHOTOS (2 by 2 grid)
+                   IMAGE SLOT 1 (top left):     overall view of the project
+                   IMAGE SLOT 2 (top right):    a close-up of an important detail
+                   IMAGE SLOT 3 (bottom left):  the build, testing, or work in progress
+                   IMAGE SLOT 4 (bottom right): the result, or you with the project
+                   Best shape: landscape, about 4:3, at least 800 pixels wide each.
+                   File names to use: project2-photo-1.jpg to project2-photo-4.jpg -->
+              <!--
+              <div class="p-figure p-figure--four">
+                <img src="project2-photo-1.jpg" alt="SLOT 1: describe the photo">
+                <img src="project2-photo-2.jpg" alt="SLOT 2: describe the photo">
+                <img src="project2-photo-3.jpg" alt="SLOT 3: describe the photo">
+                <img src="project2-photo-4.jpg" alt="SLOT 4: describe the photo">
+              </div>
+              -->
+
+              <!-- CURRENT PLACEHOLDER: the drawing. Delete this block once you use Option A or B. -->
+              <div class="p-figure">
+                <svg viewBox="0 0 320 240" role="img" aria-label="Project illustration placeholder"><path d="M40 190l60-94 30 94 30-94 30 94 30-94 60 94M100 96h120M40 190h240"/><path d="M28 202h24M268 202h24"/></svg>
+              </div>
+              <!-- Details column -->
+              <div class="p-spec">
+                <!-- Numbered rows. Copy a "p-row" line to add more. -->
+                <div class="p-row"><span>01</span><span>Key feature or requirement one</span></div>
+                <div class="p-row"><span>02</span><span>Key feature or requirement two</span></div>
+                <div class="p-row"><span>03</span><span>Key feature or requirement three</span></div>
+                <div class="p-gap"></div>
+                <!-- Tagline -->
+                <div class="p-tagline">Short tagline about the project.</div>
+                <!-- Bold statement -->
+                <p class="p-statement">One bold sentence about the result or impact of this project.</p>
+                <!-- Footer row: course / team / company, then year -->
+                <div class="p-foot"><span>Course, team, or company</span><span>2025</span></div>
+              </div>
+            </div>
           </div>
-          <h3>Project title four</h3>
-          <p>One or two sentences on what you built, what problem it solved, and your role.</p>
-          <div class="tags">Tools, skills, software</div>
         </article>
+        <!-- ############################ PROJECT 2  (END) ############################ -->
+        <!-- ############################################################
+             PROJECT 3  (START)
+             ############################################################ -->
+        <article class="project" id="project-3">
+          <!-- TOP HALF (light): label, title, description, three points -->
+          <div class="p-top">
+            <!-- Label row: project number on the left, counter on the right -->
+            <div class="p-meta"><span>Project 03</span><span class="count">03 / 04</span></div>
+            <!-- Breadcrumb line. Change "Category" to the project type. -->
+            <p class="p-crumbs">Portfolio<i>&rsaquo;</i>Projects<i>&rsaquo;</i><b>Category</b></p>
+            <!-- Project title (this also becomes the name in the Projects dropdown) -->
+            <h3>Project title three</h3>
+            <!-- Short description -->
+            <p class="p-desc">One or two sentences on what this project is, who it was for, and what problem it set out to solve.</p>
+            <!-- Three points, each a heading plus one sentence. Copy a "pt" line to add more. -->
+            <div class="p-points">
+              <div class="pt"><span class="dot"></span><h4>Objective</h4><p>Describe the goal or problem this project set out to address.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Design approach</h4><p>Describe the methods, tools, and decisions that shaped your solution.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Results</h4><p>Describe what you built, tested, or learned, with numbers if you have them.</p></div>
+            </div>
+          </div>
+          <!-- BOTTOM HALF (pine green): picture on the left, details on the right -->
+          <div class="p-bottom">
+            <div class="p-grid">
+              <!-- ############################################################
+                   PROJECT 3: PICTURE AREA  (bottom-left of the card)
+                   Right now this shows a drawing placeholder. To use your own photos:
+                     1. Upload your photo file(s) to the repo, next to index.html.
+                     2. Pick ONE option below: A = one photo, B = four photos.
+                     3. Make it live: delete the two lines that sit just above and just
+                        below its code (they hold only the comment markers).
+                     4. Replace the file names with yours and write a short description
+                        in each alt="" (it is read aloud for visitors who cannot see it).
+                     5. Delete the CURRENT PLACEHOLDER block at the bottom of this area.
+                   Photo tips: JPG or PNG, under about 500 KB each so the page loads fast.
+                   ############################################################ -->
+
+              <!-- OPTION A: ONE PHOTO
+                   IMAGE SLOT 1 (fills the whole picture area): the best single shot of
+                   this project, such as the finished product or a clean CAD render.
+                   Best shape: landscape, about 4:3, at least 1200 pixels wide.
+                   File name to use: project3-photo.jpg -->
+              <!--
+              <div class="p-figure">
+                <img src="project3-photo.jpg" alt="SLOT 1: describe the photo">
+              </div>
+              -->
+
+              <!-- OPTION B: FOUR PHOTOS (2 by 2 grid)
+                   IMAGE SLOT 1 (top left):     overall view of the project
+                   IMAGE SLOT 2 (top right):    a close-up of an important detail
+                   IMAGE SLOT 3 (bottom left):  the build, testing, or work in progress
+                   IMAGE SLOT 4 (bottom right): the result, or you with the project
+                   Best shape: landscape, about 4:3, at least 800 pixels wide each.
+                   File names to use: project3-photo-1.jpg to project3-photo-4.jpg -->
+              <!--
+              <div class="p-figure p-figure--four">
+                <img src="project3-photo-1.jpg" alt="SLOT 1: describe the photo">
+                <img src="project3-photo-2.jpg" alt="SLOT 2: describe the photo">
+                <img src="project3-photo-3.jpg" alt="SLOT 3: describe the photo">
+                <img src="project3-photo-4.jpg" alt="SLOT 4: describe the photo">
+              </div>
+              -->
+
+              <!-- CURRENT PLACEHOLDER: the drawing. Delete this block once you use Option A or B. -->
+              <div class="p-figure">
+                <svg viewBox="0 0 320 240" role="img" aria-label="Project illustration placeholder"><path d="M160 30c25 40 30 100 18 150h-36c-12-50-7-110 18-150z"/><circle cx="160" cy="100" r="10"/><path d="M142 180l-24 30 24-10M178 180l24 30-24-10M150 192l10 30 10-30"/></svg>
+              </div>
+              <!-- Details column -->
+              <div class="p-spec">
+                <!-- Numbered rows. Copy a "p-row" line to add more. -->
+                <div class="p-row"><span>01</span><span>Key feature or requirement one</span></div>
+                <div class="p-row"><span>02</span><span>Key feature or requirement two</span></div>
+                <div class="p-row"><span>03</span><span>Key feature or requirement three</span></div>
+                <div class="p-gap"></div>
+                <!-- Tagline -->
+                <div class="p-tagline">Short tagline about the project.</div>
+                <!-- Bold statement -->
+                <p class="p-statement">One bold sentence about the result or impact of this project.</p>
+                <!-- Footer row: course / team / company, then year -->
+                <div class="p-foot"><span>Course, team, or company</span><span>2025</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- ############################ PROJECT 3  (END) ############################ -->
+        <!-- ############################################################
+             PROJECT 4  (START)
+             ############################################################ -->
+        <article class="project" id="project-4">
+          <!-- TOP HALF (light): label, title, description, three points -->
+          <div class="p-top">
+            <!-- Label row: project number on the left, counter on the right -->
+            <div class="p-meta"><span>Project 04</span><span class="count">04 / 04</span></div>
+            <!-- Breadcrumb line. Change "Category" to the project type. -->
+            <p class="p-crumbs">Portfolio<i>&rsaquo;</i>Projects<i>&rsaquo;</i><b>Category</b></p>
+            <!-- Project title (this also becomes the name in the Projects dropdown) -->
+            <h3>Project title four</h3>
+            <!-- Short description -->
+            <p class="p-desc">One or two sentences on what this project is, who it was for, and what problem it set out to solve.</p>
+            <!-- Three points, each a heading plus one sentence. Copy a "pt" line to add more. -->
+            <div class="p-points">
+              <div class="pt"><span class="dot"></span><h4>Objective</h4><p>Describe the goal or problem this project set out to address.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Design approach</h4><p>Describe the methods, tools, and decisions that shaped your solution.</p></div>
+              <div class="pt"><span class="dot"></span><h4>Results</h4><p>Describe what you built, tested, or learned, with numbers if you have them.</p></div>
+            </div>
+          </div>
+          <!-- BOTTOM HALF (pine green): picture on the left, details on the right -->
+          <div class="p-bottom">
+            <div class="p-grid">
+              <!-- ############################################################
+                   PROJECT 4: PICTURE AREA  (bottom-left of the card)
+                   Right now this shows a drawing placeholder. To use your own photos:
+                     1. Upload your photo file(s) to the repo, next to index.html.
+                     2. Pick ONE option below: A = one photo, B = four photos.
+                     3. Make it live: delete the two lines that sit just above and just
+                        below its code (they hold only the comment markers).
+                     4. Replace the file names with yours and write a short description
+                        in each alt="" (it is read aloud for visitors who cannot see it).
+                     5. Delete the CURRENT PLACEHOLDER block at the bottom of this area.
+                   Photo tips: JPG or PNG, under about 500 KB each so the page loads fast.
+                   ############################################################ -->
+
+              <!-- OPTION A: ONE PHOTO
+                   IMAGE SLOT 1 (fills the whole picture area): the best single shot of
+                   this project, such as the finished product or a clean CAD render.
+                   Best shape: landscape, about 4:3, at least 1200 pixels wide.
+                   File name to use: project4-photo.jpg -->
+              <!--
+              <div class="p-figure">
+                <img src="project4-photo.jpg" alt="SLOT 1: describe the photo">
+              </div>
+              -->
+
+              <!-- OPTION B: FOUR PHOTOS (2 by 2 grid)
+                   IMAGE SLOT 1 (top left):     overall view of the project
+                   IMAGE SLOT 2 (top right):    a close-up of an important detail
+                   IMAGE SLOT 3 (bottom left):  the build, testing, or work in progress
+                   IMAGE SLOT 4 (bottom right): the result, or you with the project
+                   Best shape: landscape, about 4:3, at least 800 pixels wide each.
+                   File names to use: project4-photo-1.jpg to project4-photo-4.jpg -->
+              <!--
+              <div class="p-figure p-figure--four">
+                <img src="project4-photo-1.jpg" alt="SLOT 1: describe the photo">
+                <img src="project4-photo-2.jpg" alt="SLOT 2: describe the photo">
+                <img src="project4-photo-3.jpg" alt="SLOT 3: describe the photo">
+                <img src="project4-photo-4.jpg" alt="SLOT 4: describe the photo">
+              </div>
+              -->
+
+              <!-- CURRENT PLACEHOLDER: the drawing. Delete this block once you use Option A or B. -->
+              <div class="p-figure">
+                <svg viewBox="0 0 320 240" role="img" aria-label="Project illustration placeholder"><circle cx="120" cy="120" r="58"/><circle cx="120" cy="120" r="66" stroke-dasharray="6 7" stroke-width="5"/><circle cx="120" cy="120" r="20"/><circle cx="216" cy="120" r="36"/><circle cx="216" cy="120" r="43" stroke-dasharray="5 6" stroke-width="5"/><circle cx="216" cy="120" r="12"/></svg>
+              </div>
+              <!-- Details column -->
+              <div class="p-spec">
+                <!-- Numbered rows. Copy a "p-row" line to add more. -->
+                <div class="p-row"><span>01</span><span>Key feature or requirement one</span></div>
+                <div class="p-row"><span>02</span><span>Key feature or requirement two</span></div>
+                <div class="p-row"><span>03</span><span>Key feature or requirement three</span></div>
+                <div class="p-gap"></div>
+                <!-- Tagline -->
+                <div class="p-tagline">Short tagline about the project.</div>
+                <!-- Bold statement -->
+                <p class="p-statement">One bold sentence about the result or impact of this project.</p>
+                <!-- Footer row: course / team / company, then year -->
+                <div class="p-foot"><span>Course, team, or company</span><span>2025</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- ############################ PROJECT 4  (END) ############################ -->
       </div>
     </div>
   </section>
 
-  <!-- PROFESSIONAL EXPERIENCE -->
-  <section class="block" id="experience">
+  <!-- ==============================================================
+       5. EXPERIENCES  (jobs and internships)
+       Each entry is one <article class="job"> block. See the first block for how to add one.
+       ============================================================== -->
+  <section class="block" id="experiences">
     <div class="col wide">
-      <h2>Professional Experience</h2>
+      <h2>Experiences</h2>
       <div class="jobs">
+        <!-- ############################################################
+             ENTRY 1  (START)
+             TO ADD A JOB OR INTERNSHIP
+               1. Copy everything from "ENTRY 1 (START)" to "ENTRY 1 (END)".
+               2. Paste it right after the last entry's END line.
+                  (Newest first is common, so you can also paste it above the first one.)
+               3. Edit the dates, title, company and bullet points.
+             TO REMOVE one: delete its whole block.
+             ############################################################ -->
         <article class="job">
+          <!-- Dates -->
           <div class="when">Start – End dates</div>
           <div>
+            <!-- Job title -->
             <h3>Job title</h3>
+            <!-- Company and location -->
             <p class="org">Company name, City, State</p>
+            <!-- Bullet points. Copy an <li> line to add one. -->
             <ul>
               <li>Describe a task you owned and the result it produced.</li>
               <li>Describe a tool, process, or test you used or improved.</li>
@@ -112,11 +500,19 @@
             </ul>
           </div>
         </article>
+        <!-- ############################ ENTRY 1  (END) ############################ -->
+        <!-- ############################################################
+             ENTRY 2  (START)
+             ############################################################ -->
         <article class="job">
+          <!-- Dates -->
           <div class="when">Start – End dates</div>
           <div>
+            <!-- Job title -->
             <h3>Job title</h3>
+            <!-- Company and location -->
             <p class="org">Company name, City, State</p>
+            <!-- Bullet points. Copy an <li> line to add one. -->
             <ul>
               <li>Describe a problem you helped solve.</li>
               <li>Include a number if you have one, such as time saved or cost reduced.</li>
@@ -124,11 +520,16 @@
             </ul>
           </div>
         </article>
+        <!-- ############################ ENTRY 2  (END) ############################ -->
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ==============================================================
+       6. CONTACT
+       The form needs no editing. The address that receives messages is set in SETTINGS
+       at the top of the SCRIPT section near the bottom of this file.
+       ============================================================== -->
   <section class="block" id="contact">
     <div class="col">
       <h2>Contact</h2>
@@ -142,7 +543,9 @@
     </div>
   </section>
 
-  <!-- RESUME -->
+  <!-- ==============================================================
+       7. RESUME
+       ============================================================== -->
   <section class="block" id="resume">
     <div class="col">
       <h2>Resume</h2>
@@ -153,16 +556,34 @@
   </section>
 </main>
 
+<!-- ==============================================================
+     8. FOOTER
+     ============================================================== -->
 <footer>
   <p>&copy; <span id="yr"></span> Alejandro Caballero-Julian</p>
 </footer>
 
+<!-- ==============================================================
+     9. SCRIPT  (small bits of behavior; the page works without editing this
+     except for the SETTINGS block right below)
+     ============================================================== -->
 <script>
+  // ---------------------------------------------------------------
+  // SETTINGS YOU MAY WANT TO CHANGE
+  // ---------------------------------------------------------------
+  // Messages sent through the Contact form go to this address.
+  var CONTACT_EMAIL = 'you@example.com';
+
+  // ---------------------------------------------------------------
+  // Footer: fills in the current year
+  // ---------------------------------------------------------------
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Highlight the nav link for the section currently on screen
+  // ---------------------------------------------------------------
+  // Menu: highlights the link for the section you are looking at
+  // ---------------------------------------------------------------
   (function () {
-    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a:not(.sub)'));
     var map = {};
     links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
     var sections = Object.keys(map).map(function (id) { return document.getElementById(id); });
@@ -185,9 +606,37 @@
     update();
   })();
 
-  // Contact form: opens the visitor's email app with the message filled in
+  // ---------------------------------------------------------------
+  // Projects dropdown: builds its list from the project titles on the page
+  // ---------------------------------------------------------------
   (function () {
-    var TO = 'you@example.com'; // <- change to your email address
+    var wrap = document.querySelector('.has-menu'),
+        btn = wrap.querySelector('.menu-btn'),
+        list = wrap.querySelector('.submenu');
+    document.querySelectorAll('#projects .project').forEach(function (card) {
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.className = 'sub';
+      a.href = '#' + card.id;
+      a.textContent = card.querySelector('h3').textContent;
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    function setOpen(open) {
+      wrap.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!wrap.classList.contains('open')); });
+    list.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  })();
+
+  // ---------------------------------------------------------------
+  // Contact form: opens the visitor's email app with the message filled in,
+  // addressed to CONTACT_EMAIL (set in SETTINGS above)
+  // ---------------------------------------------------------------
+  (function () {
+    var TO = CONTACT_EMAIL;
     document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
       var name = document.getElementById('c-name').value.trim(),
